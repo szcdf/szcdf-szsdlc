@@ -19,7 +19,7 @@ It's managed with [szsdlc](https://pypi.org/project/zhaostephen-szsdlc/).
 ## Usage
 
 ```sh
-pip install zhaostephen-szsdlc==1.0.0
+pip install zhaostephen-szsdlc==0.2.4
 szsdlc capture "an idea"     # into the inbox
 szsdlc inbox                 # unrefined ideas
 szsdlc next                  # actionable work, in roadmap order

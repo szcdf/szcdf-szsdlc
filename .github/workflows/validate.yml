@@ -19,7 +19,7 @@ jobs:
         with:
           python-version: "3.12"
       # Pinned: bump in lockstep with the szsdlc version used locally.
-      - run: pip install zhaostephen-szsdlc==1.0.0
+      - run: pip install zhaostephen-szsdlc==0.2.4
       - run: szsdlc validate
       # Generated views must be committed up to date.
       - name: Views are in sync
