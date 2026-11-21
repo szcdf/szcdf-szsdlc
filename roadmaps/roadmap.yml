@@ -1,5 +1,8 @@
 # Placement lives here and nowhere else — there is no priority field on an
 # entity. Written by `szsdlc schedule` / `szsdlc unschedule`.
-now: []
+now:
+  - EPIC-0001
+  - WI-0001
+  - WI-0004
 next: []
 later: []
