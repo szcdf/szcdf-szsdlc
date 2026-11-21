@@ -1,0 +1,28 @@
+name: Validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+concurrency:
+  group: validate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  validate:
+    name: szsdlc validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      # Pinned: bump in lockstep with the szsdlc version used locally.
+      - run: pip install zhaostephen-szsdlc==1.0.0
+      - run: szsdlc validate
+      # Generated views must be committed up to date.
+      - name: Views are in sync
+        run: |
+          szsdlc sync
+          git diff --exit-code

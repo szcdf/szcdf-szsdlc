@@ -1,0 +1,5 @@
+# Placement lives here and nowhere else — there is no priority field on an
+# entity. Written by `szsdlc schedule` / `szsdlc unschedule`.
+now: []
+next: []
+later: []

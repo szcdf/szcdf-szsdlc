@@ -1,0 +1,12 @@
+# szsdlc project configuration.
+#
+# This file is deep-merged over the built-in defaults, so everything below is
+# optional and an empty file is already a valid project. Adjust one flag:
+#
+#   entity_types: {spike: {persistent: true}}
+#
+# drop a type you do not want (`entity_types: {spike: null}`), or replace a
+# whole section outright (`entity_types: {_replace: true, ...}`).
+
+project:
+  name: szcdf
