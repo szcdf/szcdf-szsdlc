@@ -1,7 +1,7 @@
 ---
 id: WI-0004
 title: Split personal profiles, presets and data out of szcdf-core
-status: review
+status: done
 opened: 2026-11-21
 ---
 

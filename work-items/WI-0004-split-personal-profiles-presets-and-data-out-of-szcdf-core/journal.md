@@ -1,0 +1,1 @@
+- 2026-11-21 szcdf-core PR #17 merged as 6d1136f; personal files now live only in the personal package.
