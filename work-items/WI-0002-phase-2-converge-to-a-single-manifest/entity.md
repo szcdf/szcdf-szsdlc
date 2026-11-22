@@ -1,17 +1,22 @@
 ---
 id: WI-0002
 title: 'Phase 2: converge to a single manifest'
-status: groomed
+status: dropped
 opened: 2026-11-21
 relations:
   parent: EPIC-0001
-  informed_by:
-    - ADR-0001
   depends_on:
     - WI-0001
 ---
 
-Phase 2 of EPIC-0001 (ADR-0001). Starts after Phase 1 (WI-0001) lands.
+DROPPED (ADR-0002): a single installer makes manifest convergence unnecessary —
+one parser reads one manifest, so there is no `#@bash`-active Bash upgrade and no
+`windows.szcdfis` to retire. The parity backlog below also dissolves, because
+there is only one implementation. Kept below for the record.
+
+---
+
+Phase 2 of EPIC-0001. Starts after Phase 1 (WI-0001) lands.
 
 ## Scope
 

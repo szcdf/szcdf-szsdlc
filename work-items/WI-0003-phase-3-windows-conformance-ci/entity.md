@@ -5,14 +5,16 @@ status: groomed
 opened: 2026-11-21
 relations:
   parent: EPIC-0001
-  depends_on:
-    - WI-0002
 ---
 
-Phase 3 of EPIC-0001 (ADR-0001): the conformance harness that keeps the two
-installers from drifting. Starts after Phase 2 (WI-0002).
+Cross-platform build, release, and test CI for the single Rust installer
+(ADR-0002). Reframed from the original "conformance harness that keeps two
+installers in sync," which is moot now that there is one installer.
 
 ## Scope
 
-- Add a Windows CI runner that runs `bin/szcdfi.ps1` against the manifest.
-- Assert the same result tree that `test/installer` asserts on Linux.
+- GitHub Actions matrix (native runners per OS) builds one binary per target
+  triple and publishes to Releases with checksums.
+- Run the installer on Windows, macOS, and Linux against the manifest and assert
+  the expected result tree (the assertions `test/installer` makes on Linux today).
+- Smoke-test the per-OS fetch bootstrap (`install.sh` / `install.ps1`).

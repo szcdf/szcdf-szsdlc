@@ -10,3 +10,22 @@
 
 project:
   name: szcdf
+
+# Local override: enable a terminal `rejected` status for decisions until the
+# installed szsdlc ships it as a default. Replaces the decision workflow so an
+# ADR can be rejected from proposed or accepted. Remove once the tool default
+# provides `rejected`.
+entity_types:
+  decision:
+    workflow:
+      _replace: true
+      initial: proposed
+      states:
+        proposed:
+          to: [accepted, superseded, rejected]
+        accepted:
+          to: [superseded, rejected]
+        superseded:
+          terminal: true
+        rejected:
+          terminal: true

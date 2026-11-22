@@ -1,7 +1,7 @@
 ---
 id: ADR-0001
 title: 'Multi-shell support: split by effect type'
-status: proposed
+status: rejected
 opened: 2026-08-02
 ---
 
