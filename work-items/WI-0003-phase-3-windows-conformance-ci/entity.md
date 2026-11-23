@@ -7,14 +7,17 @@ relations:
   parent: EPIC-0001
 ---
 
-Cross-platform build, release, and test CI for the single Rust installer
-(ADR-0002). Reframed from the original "conformance harness that keeps two
-installers in sync," which is moot now that there is one installer.
+Cross-platform install and smoke-test CI for the single `szcdfi` Python
+installer (ADR-0003), in the szcdfi repo. Reframed twice: first from the original
+"conformance harness that keeps two installers in sync" (moot under one
+installer), now off the Rust build / release matrix (ADR-0002, superseded) since a
+pure-Python package has no per-platform build.
 
 ## Scope
 
-- GitHub Actions matrix (native runners per OS) builds one binary per target
-  triple and publishes to Releases with checksums.
-- Run the installer on Windows, macOS, and Linux against the manifest and assert
-  the expected result tree (the assertions `test/installer` makes on Linux today).
-- Smoke-test the per-OS fetch bootstrap (`install.sh` / `install.ps1`).
+- GitHub Actions matrix (Windows, macOS, Linux) installs `uv`, then runs the
+  package against a fixture `.szcdfis` and asserts the expected result tree (the
+  assertions `test/installer` makes on Linux today).
+- Exercise it the way users will: `uvx szcdfi@...` resolving a managed CPython.
+- Release: `uv publish` (or equivalent) so `uvx` can resolve the package. No
+  binary build, no Releases hosting, no checksum fetch.

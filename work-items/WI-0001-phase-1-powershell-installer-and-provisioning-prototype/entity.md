@@ -14,7 +14,8 @@ path for PowerShell, without touching the proven Bash flow.
   (draft), branch `develop/multishell-powershell`.
 - Scope and verification: `design.md`; task list: `plan.md`.
 
-NOTE (ADR-0002): the PowerShell installer `szcdfi.ps1` and `windows.szcdfis` are
-superseded by the single Rust installer and are throwaway. The entry /
-provisioning artifacts (`entry-pwsh.ps1`, `add-claude-md-managed`,
-`src/core-data/CLAUDE.user.md`, the `@import` stub) carry forward.
+NOTE (ADR-0003): the PowerShell installer `szcdfi.ps1` and `windows.szcdfis` are
+superseded by the single Python installer (`szcdfi`, its own repo) and are
+throwaway. The entry / provisioning artifacts (`entry-pwsh.ps1`,
+`add-claude-md-managed`, `src/core-data/CLAUDE.user.md`, the `@import` stub)
+carry forward.
