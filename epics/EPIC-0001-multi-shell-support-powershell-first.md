@@ -28,7 +28,15 @@ Work items:
   PowerShell installer is superseded by the single Python installer (ADR-0003);
   its entry / provisioning artifacts carry forward.
 - WI-0002 — DROPPED: manifest convergence is moot under a single installer.
-- WI-0003 — cross-platform install / smoke-test CI for the Python package.
+- WI-0003 — DONE: cross-platform install / smoke-test CI for the Python package.
+- WI-0005 — DONE: build the `szcdfi` Python package
+  ([szcdf/szcdfi](https://github.com/szcdf/szcdfi), public; CI green across
+  3 OS × py 3.11 / 3.12 / 3.13).
+- WI-0006 — publish `szcdfi` to PyPI so `uvx` resolves it (blocked on owner PyPI
+  Trusted Publishing / token setup).
 
-Still to add: a work item to build the `szcdfi` Python package in its own repo
-(the directive engine), and one to publish it so `uvx` can resolve it.
+Open design question: WI-0005 had to GENERALIZE the guard model (the Bash
+installer has no guard support; the PS prototype had single-id guards). It now
+uses a `#@<guard> <directive>` active-guard-SET with a platform default. That was
+a build-time design call, not a port, and awaits owner ratification — a candidate
+spike or ADR under the still-open architecture above.

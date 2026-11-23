@@ -1,7 +1,7 @@
 ---
 id: WI-0003
 title: 'Phase 3: Windows conformance CI'
-status: groomed
+status: done
 opened: 2026-11-21
 relations:
   parent: EPIC-0001
